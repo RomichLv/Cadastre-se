@@ -1,0 +1,266 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+body {
+    font-family: Tahoma, Verdana, sans-serif;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1215px;
+    padding: 0 15px;
+}
+/*@media (max-width: 1215px) {
+    .container {
+        max-width: 970px;
+    }
+}
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+}
+@media (max-width: 767px) {
+    .container {
+        max-width: none;
+    }
+}*/
+/*HEADER*/
+.header {
+    background-color: #2a6394;
+    height: 36px;
+}
+.header__nav {
+    float: right;
+    padding-right: 20px;
+}
+.header__nav a {
+    padding: 0 10px;
+    opacity: 0.3;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 36px;
+    font-weight: 400;
+    color: #ffffff;
+    text-decoration: none;
+}
+.header__nav a:hover {
+    background-color: #4eabda;
+    color: #ffffff;
+    opacity: 1;
+}
+.header__nav a:nth-child(5) {
+}
+.header__nav a:nth-child(6) {
+    border-left: 1px solid rgba(078, 171, 218, 1);
+    opacity: 1;
+    color: #fefefe;
+    padding-left: 50px;
+    position: relative;
+}
+.header__nav a:nth-child(6)::before {
+    content: url(../img/check_icon.png);
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+.header__nav a:nth-child(7) {
+    opacity: 1;
+    color: #fefefe;
+}
+.underline {
+    text-decoration: underline;
+}
+/*MAIN*/
+.main {
+    clear: both;
+    background-image: url(../img/background.png);
+    text-align: center;
+    padding-top: 213px;
+    padding-bottom: 180px;
+}
+.main__title {
+    margin: 0 auto;
+    max-width: 560px;
+    max-height: 60px;
+    background-color: rgba(0, 0, 0, 0.63);
+    margin-bottom: 2px;
+}
+.main__title h1 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 60px;
+    color: #ffffff;
+}
+.main__form {
+    max-width: 560px;
+    max-height: 580px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.63);
+    padding-top: 35px;
+    padding-bottom: 20px;
+}
+.form__facebook a img {
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.form__ouline {
+    margin-bottom: 30px;
+    position: relative;
+    color: #999999;
+}
+.form__ouline::before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 120px;
+    top: 11px;
+    left: 145px;
+    background-image: linear-gradient(0deg, #1d1d1d 0%, #6d6d6d 100%);
+}
+.form__ouline::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 120px;
+    top: 11px;
+    right: 145px;
+    background-image: linear-gradient(0deg, #1d1d1d 0%, #6d6d6d 100%);
+}
+.form__firstname {
+    margin-bottom: 18px;
+}
+.form__lastname {
+    margin-bottom: 18px;
+}
+.form__email {
+    margin-bottom: 18px;
+}
+.form__choosepassword {
+    margin-bottom: 18px;
+}
+.form__confirmpassword {
+    margin-bottom: 20px;
+}
+input::-webkit-input-placeholder {
+    padding-left: 15px;
+    color: #cccccc;
+}
+.active input {
+    color: #cccccc;
+    width: 276px;
+    height: 35px;
+    background-image: linear-gradient(0deg, #111111 0%, #0e0d0d 100%);
+    box-shadow: 0px 1px 0px 0px #4b4b4b, inset 0px 2px 5px 0px rgba(29, 26, 22, 0.2);
+}
+.active input:focus {
+    color: #cccccc;
+    background-image: linear-gradient(0deg, #1b5288 0%, #1b5288 100%);
+    box-shadow: 0px 1px 0px 0px #4b4b4b, inset 0px 2px 5px 0px rgba(29, 26, 22, 0.2);
+}
+.form__checkbox {
+    font-size: 14px;
+    font-weight: 400;
+    color: #cccccc;
+    margin-left: -45px;
+    margin-bottom: 21px;
+}
+.button__create {
+}
+.button__create a {
+}
+.button__create a input {
+    display: inline-block;
+    background-color: #439bd3;
+    line-height: 38px;
+    padding: 0 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 0 grey;
+}
+.button__create a input:hover {
+    background-color: #2d678b;
+    box-shadow: 0 2px 0 grey;
+}
+.button__instruction {
+    font-size: 11px;
+    color: #cccccc;
+}
